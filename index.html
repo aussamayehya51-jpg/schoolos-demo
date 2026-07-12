@@ -67,7 +67,24 @@
   .rc table{color:#12233f}.rc th{background:#eef4f8;color:#5f7481}.rc td{border-color:#e2e8f0}
   .note{background:var(--panel2);border-left:3px solid var(--blue);border-radius:8px;padding:10px 14px;color:var(--muted);font-size:13px;margin-top:12px}
   .help{position:fixed;bottom:18px;right:18px;background:var(--blue);color:#fff;border-radius:999px;padding:11px 18px;font-weight:700;box-shadow:0 6px 18px rgba(59,130,246,.4);cursor:pointer}
-  @media(max-width:720px){.app{grid-template-columns:1fr}.side{display:none}.split{grid-template-columns:1fr}}
+  @media(max-width:720px){
+    .app{grid-template-columns:1fr;height:auto}
+    .side{
+      display:flex;flex-direction:row;align-items:center;gap:6px;
+      overflow-x:auto;overflow-y:hidden;white-space:nowrap;
+      border-right:none;border-bottom:1px solid var(--border);
+      padding:10px 12px;position:sticky;top:0;z-index:20;-webkit-overflow-scrolling:touch}
+    .side::-webkit-scrollbar{height:0}
+    .brand{padding:0 12px 0 4px;flex:0 0 auto}
+    .brand h1{font-size:15px}.brand p{display:none}
+    .sec{display:none}
+    .nav{flex:0 0 auto;padding:9px 13px;border-radius:9px;background:rgba(255,255,255,.05);font-size:13px}
+    .nav.active{background:rgba(59,130,246,.2);color:#7cb1f5}
+    .main{padding:16px 14px;height:auto}
+    .head h2{font-size:19px}
+    .split{grid-template-columns:1fr}
+    .rc{max-width:100%}
+  }
 </style>
 </head>
 <body>
